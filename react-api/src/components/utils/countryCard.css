@@ -1,0 +1,22 @@
+.country-card {
+    width: 20%;
+    display: flex;
+    border: 1px solid white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.country-card img {
+    width: 80%;
+    border-radius: 15px;
+    padding-bottom: 1rem;
+}
+
+.country-card h2, h3 {
+    padding: 0.5rem;
+    color: black;
+    font-size: 0.8rem;
+}
