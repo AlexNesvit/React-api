@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState, useEffect } from 'react';
 import './App.css'
 import getFlags from './api/get_flags'
 import Header from './components/header/Header'
 import Main from './components/main/Main'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+function App() {
+  const [countries, setCountries] = useState([])
+  useEffect(() => {
+    getFlags()
+  }, []);
+  
   return (
     <>
     <Header />
-    <Main />
+    <Main countries={countries} />
 
     </>
   )

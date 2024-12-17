@@ -1,16 +1,23 @@
 import React from 'react'
 
-const Main = () => {
+
+const Main = ({ countries }) => {
+    const uniqueRegions = [...new Set(countries.map(country => country.region))];
     return (
-        <main>
+        <>
+            <main>
                 <h2>Selectionez votre région</h2>
+
+
                 <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                    {uniqueRegions.map((region, index) => (
+                        <option key={index} value={region}>
+                            {region}
+                        </option>
+                    ))}
                 </select>
-        </main>
+            </main>
+        </>
     )
 }
 
