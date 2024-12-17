@@ -3,6 +3,9 @@
 ## 
 ```bash
   npm create vite@latest
+```
+
+```bash
   cd react-api
   npm install
   npm run dev
