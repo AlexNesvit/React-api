@@ -2,15 +2,11 @@ import React from 'react';
 import CountryCard from '../utils/CountryCard';
 import './main.css';
 
-const Main = ({ countries, selectedRegion, setSelectedRegion }) => {
-    // Extraction des régions uniques
-    const uniqueRegions = [...new Set(countries.map(country => country.region))];
-    console.log(uniqueRegions);
+const Main = ({ countries, selectedRegion, setSelectedRegion, countriesOption }) => {
+    const uniqueRegions = [...new Set(countriesOption.map(country => country.region))];
 
-    // Gestion du changement de région
     const handleRegionChange = (event) => {
-        
-        setSelectedRegion(event.target.value);  // Met à jour l'état de la région sélectionnée
+        setSelectedRegion(event.target.value);
     };
 
     // Filtrer les pays selon la région sélectionnée
@@ -24,10 +20,15 @@ const Main = ({ countries, selectedRegion, setSelectedRegion }) => {
                 <h2>Sélectionnez votre région</h2>
 
                 <label htmlFor="region">Sélectionnez votre région</label>
-                <select id="region" value={selectedRegion} onChange={handleRegionChange}>
+                <select 
+                    id="region" 
+                    value={selectedRegion} 
+                    onChange={handleRegionChange}
+                >
                     <option value="">Toutes les régions</option>
-                    {uniqueRegions.map((region, index) => (
-                        <option key={index} value={region}>
+                    {/* Affichage des options des régions */}
+                    {uniqueRegions.map((region) => (
+                        <option key={region} value={region}>
                             {region}
                         </option>
                     ))}

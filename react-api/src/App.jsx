@@ -28,6 +28,7 @@ const fetchCountries = async()  =>{
       <Header />
       <Main 
           countries={filteredCountries} 
+          countriesOption={countries}
           selectedRegion={selectedRegion} 
           setSelectedRegion={setSelectedRegion} 
         />

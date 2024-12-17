@@ -10,9 +10,10 @@
 }
 
 .country-card img {
-    width: 80%;
-    border-radius: 15px;
+    width: 100%;
     padding-bottom: 1rem;
+    object-fit: cover;
+    height: 100px;
 }
 
 .country-card h2, h3 {
