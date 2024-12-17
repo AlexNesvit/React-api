@@ -7,9 +7,16 @@ import Main from './components/main/Main'
 
 function App() {
   const [countries, setCountries] = useState([])
+
+const fetchCountries = async()  =>{
+  const data = await getFlags()
+  setCountries(data)
+}
   useEffect(() => {
-    getFlags()
+    fetchCountries()
   }, []);
+
+
   
   return (
     <>
