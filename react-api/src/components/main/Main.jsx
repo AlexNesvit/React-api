@@ -14,15 +14,18 @@ const Main = ({ countries, selectedRegion, setSelectedRegion, countriesOption })
         ? countries.filter(country => country.region === selectedRegion)  // Filtre les pays selon la région
         : countries;  // Si aucune région n'est sélectionnée, afficher tous les pays
 
+    // Compteur dynamique
+    const countryCount = filteredCountries.length;
+
     return (
         <>
             <main>
                 <h2>Sélectionnez votre région</h2>
 
                 <label htmlFor="region">Sélectionnez votre région</label>
-                <select 
-                    id="region" 
-                    value={selectedRegion} 
+                <select
+                    id="region"
+                    value={selectedRegion}
                     onChange={handleRegionChange}
                 >
                     <option value="">Toutes les régions</option>
@@ -33,6 +36,11 @@ const Main = ({ countries, selectedRegion, setSelectedRegion, countriesOption })
                         </option>
                     ))}
                 </select>
+
+                {/* Compteur de pays */}
+                <p className="country-counter">
+                    {countryCount} {countryCount === 1 ? 'pays affiché' : 'pays affichés'}
+                </p>
 
                 {/* Affichage des pays correspondant à la région sélectionnée */}
                 <div className="countries-list">
