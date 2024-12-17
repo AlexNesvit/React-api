@@ -1,12 +1,18 @@
 import React from 'react';
 import CountryCard from '../utils/CountryCard';
 import './main.css';
+import SearchBar from '../utils/searchBar/SearchBar';
 
 const Main = ({ countries, selectedRegion, setSelectedRegion, countriesOption }) => {
     const uniqueRegions = [...new Set(countriesOption.map(country => country.region))];
 
     const handleRegionChange = (event) => {
         setSelectedRegion(event.target.value);
+    };
+
+    const handleSearchQuery = (query) => {
+        console.log(query);
+        
     };
 
     // Filtrer les pays selon la région sélectionnée
@@ -17,6 +23,7 @@ const Main = ({ countries, selectedRegion, setSelectedRegion, countriesOption })
     return (
         <>
             <main>
+                < SearchBar onChange={handleSearchQuery} />
                 <h2>Sélectionnez votre région</h2>
 
                 <label htmlFor="region">Sélectionnez votre région</label>
