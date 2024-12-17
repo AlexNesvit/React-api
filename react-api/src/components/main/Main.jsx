@@ -10,11 +10,6 @@ const Main = ({ countries, selectedRegion, setSelectedRegion, countriesOption })
         setSelectedRegion(event.target.value);
     };
 
-    const handleSearchQuery = (query) => {
-        console.log(query);
-        
-    };
-
     // Filtrer les pays selon la région sélectionnée
     const filteredCountries = selectedRegion
         ? countries.filter(country => country.region === selectedRegion)  // Filtre les pays selon la région
