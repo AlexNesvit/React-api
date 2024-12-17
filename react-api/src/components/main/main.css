@@ -12,3 +12,9 @@ main {
     justify-content: center;
     align-items: start;
 }
+
+.country-counter {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
